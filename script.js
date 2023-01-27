@@ -50,8 +50,22 @@ class Carousel{
         });
     }
 
+    startAutoMove() {
+        setInterval(() => {
+            this.carouselArray.push(this.carouselArray.shift());
+            this.updateGallery();
+        }, 3000);
+    }
+
 }
 
 const exampleCarousel = new Carousel(galleryContainer, galleryItems, galleryControls);
 exampleCarousel.setControls();
 exampleCarousel.useControls();
+exampleCarousel.startAutoMove();
+
+
+
+
+
+
